@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App | Previsão do Tempo</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Aplicativo Principal -->
+        <div class="main-app" id="main-app">
+            <header class="app-header">
+                <div class="header-left">
+                    <h1 class="app-title">WEATHER<span>APP</span></h1>
+                    <div class="datetime" id="datetime">--:--:-- | --/--/----</div>
+                </div>
+                <div class="header-right">
+                    <button class="btn-icon" id="refresh-btn">
+                        <span class="icon">🔄</span>
+                    </button>
+                </div>
+            </header>
+            
+            <div class="app-content">
+                <!-- Painel de Busca -->
+                <div class="search-panel glass-card">
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="Buscar cidade...">
+                        <button id="search-btn">
+                            <span class="icon">🔍</span>
+                        </button>
+                        <button id="location-btn">
+                            <span class="icon">📍</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Painel Principal -->
+                <div class="weather-display">
+                    <!-- Card de Clima Atual -->
+                    <div class="current-weather glass-card" id="current-weather">
+                        <div class="weather-location">
+                            <h2 id="location">--</h2>
+                            <div class="weather-date" id="current-date">--</div>
+                        </div>
+                        
+                        <div class="weather-main">
+                            <div class="weather-icon-container">
+                                <div class="weather-icon-bg" id="weather-icon-bg">
+                                    <img src="" alt="" id="weather-icon" class="weather-icon">
+                                </div>
+                            </div>
+                            
+                            <div class="weather-temp">
+                                <div class="current-temp" id="temperature">--°C</div>
+                                <div class="weather-desc" id="weather-description">--</div>
+                            </div>
+                        </div>
+                        
+                        <div class="weather-details">
+                            <div class="detail-item">
+                                <div class="detail-icon">💧</div>
+                                <div class="detail-value" id="humidity">--%</div>
+                                <div class="detail-label">Umidade</div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <div class="detail-icon">💨</div>
+                                <div class="detail-value" id="wind">-- km/h</div>
+                                <div class="detail-label">Vento</div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <div class="detail-icon">🌡️</div>
+                                <div class="detail-value" id="feels-like">--°C</div>
+                                <div class="detail-label">Sensação</div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <div class="detail-icon">🔆</div>
+                                <div class="detail-value" id="pressure">-- hPa</div>
+                                <div class="detail-label">Pressão</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Previsão por Hora -->
+                    <div class="hourly-forecast glass-card">
+                        <h3>Previsão por Hora</h3>
+                        <div class="hourly-scroll" id="hourly-forecast">
+                            <!-- Itens serão inseridos via JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <!-- Previsão por Dia -->
+                    <div class="daily-forecast glass-card">
+                        <h3>Próximos Dias</h3>
+                        <div class="daily-grid" id="daily-forecast">
+                            <!-- Itens serão inseridos via JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Efeitos de Fundo -->
+        <div class="background-effects">
+            <div class="gradient-bg"></div>
+        </div>
+    </div>
+    
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-content">
+            <div class="loading-spinner">
+                <div class="spinner-circle"></div>
+                <div class="spinner-circle"></div>
+                <div class="spinner-circle"></div>
+            </div>
+            <div class="loading-text" id="loading-text">Carregando dados meteorológicos...</div>
+        </div>
+    </div>
+    
+    <!-- Notificação -->
+    <div class="notification" id="notification"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
